@@ -1,0 +1,18 @@
+.buttonHolder {
+    padding: 10px;
+}
+
+.animals {
+    border-radius: 10px;
+    padding: 5px;
+    margin: 2px;
+}
+
+.gifHodler {
+    float: right;
+}
+
+.animalDiv {
+    float: left;
+    margin: 5px;
+}

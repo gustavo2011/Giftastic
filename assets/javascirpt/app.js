@@ -3,7 +3,7 @@ console.log("startup test");
 var animals = ["Penguin","Tiger","Pibutll","Turtle","Monkey","Donkey","Pig","Dolphin","Starfish","Pig"];
 var animal;
 
-function createButton () {
+function createButtons () {
 
     $("#animalButtons").empty();
 
@@ -25,6 +25,8 @@ function createButton () {
     }
 }
 
+//create new button for animal added
+
 $("#add-animal").on("click", function(event) {
     animal = $("#animal-input").val().trim();
 
@@ -32,7 +34,7 @@ $("#add-animal").on("click", function(event) {
 
     animals.push(animal);
 
-    createButton();
+    createButtons();
 
     $(document).on("click", ".gif", function(){
 
@@ -44,7 +46,9 @@ $("#add-animal").on("click", function(event) {
 
             $(this).attr("src", $(this).attr("data-animate"));
             $(this).attr("data-state", "animate");
+
         } else {
+
             $(this).attr("src", $(this).attr("data-still"));
             $(this).attr("data-state", "still")
         }
@@ -88,3 +92,26 @@ $('body').on('click', '.animals', function()
   });
 
 });
+
+$(document).on("click", ".gif", function () {
+
+    var state = $(this).attr("data-state")
+  
+    console.log(state);
+    if (state === "still") {
+  
+       
+        $(this).attr("src", $(this).attr("data-animate"));
+        $(this).attr("data-state", "animate");
+  
+    } else {
+  
+        $(this).attr("src", $(this).attr("data-still"));
+        $(this).attr("data-state", "still")
+    }
+  
+  
+  });
+  
+  
+  createButtons();
